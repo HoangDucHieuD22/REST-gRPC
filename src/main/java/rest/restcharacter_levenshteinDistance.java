@@ -9,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Map;
 
-public class restcharacter_khoangcachchinhsuanhonhat {
+public class restcharacter_levenshteinDistance {
 
     public static void main(String[] args) throws Exception {
         // --- KHAI BÁO ---

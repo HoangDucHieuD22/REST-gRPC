@@ -24,16 +24,10 @@ public class restcharacter_sortword {
         HttpResponse<String> getResponse = client.send(getReq, HttpResponse.BodyHandlers.ofString());
 
         String responseBody = getResponse.body();
-        // IN RA ĐỂ DEBUG: Luôn kiểm tra xem server trả về gì
-        System.out.println("DEBUG: Phản hồi từ server: " + responseBody);
 
         var res = mapper.readTree(responseBody);
 
-        // KIỂM TRA PHẢN HỒI TRƯỚC KHI XỬ LÝ
-        if (res.get("requestId") == null) {
-            System.err.println("LỖI: Server không trả về 'requestId'. Vui lòng kiểm tra lại qCode và studentCode.");
-            return; // Dừng chương trình
-        }
+
 
         String requestId = res.get("requestId").asText();
         String data = res.get("data").asText();
